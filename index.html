@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__head">
+      <span class="app__logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </span>
+      <h1 class="app__title">Todo App</h1>
+    </header>
+
+    <form class="composer" id="composer" autocomplete="off">
+      <input class="composer__input" id="taskInput" type="text" placeholder="What needs doing?" aria-label="New task">
+      <button class="composer__add" type="submit">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        Add
+      </button>
+    </form>
+
+    <div class="toolbar">
+      <p class="toolbar__tip">Tip: double-click a todo to edit. Press Enter to save.</p>
+      <nav class="tabs" id="tabs" aria-label="Filter tasks">
+        <button class="tab is-selected" data-filter="all">All</button>
+        <button class="tab" data-filter="active">Active</button>
+        <button class="tab" data-filter="completed">Completed</button>
+      </nav>
+    </div>
+
+    <ul class="tasks" id="taskList"></ul>
+
+    <footer class="app__foot">
+      <span class="counter" id="counter">0 items left</span>
+      <div class="bulk">
+        <button class="bulk__btn" id="clearDone">Clear completed</button>
+        <button class="bulk__btn bulk__btn--danger" id="clearAll">Clear all</button>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
